@@ -12,6 +12,7 @@ function timeformat (s) {
 
 
 
+// start the timer
 startbtn.addEventListener ('click', () => {
     if (timer !== null) return 
 
@@ -21,7 +22,7 @@ startbtn.addEventListener ('click', () => {
 
     if (second === 0) {
         clearInterval(timer)
-        timer = null
+        timer = null 
     } 
     
 })
