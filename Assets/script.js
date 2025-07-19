@@ -9,20 +9,34 @@ function timeformat (s) {
     const remainingSeconds = second % 60
     return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
 }
-
+// initial display of the timer(5 seconds)
+timerdisplay.textContent = timeformat(second) 
 
 
 // start the timer
-startbtn.addEventListener ('click', () => {
+function startTimer () {
     if (timer !== null) return 
 
     timer = setInterval(() => {
-        second--
-        timerdisplay.textContent = timeformat(second)}, 1000)
+        timerdisplay.textContent = timeformat(second)
 
-    if (second === 0) {
-        clearInterval(timer)
-        timer = null 
-    } 
-    
+        // if second is set off to 0
+        if (second === 0) {
+            clearInterval(timer) // timer will be off
+            timer = null
+        } else { // if not, continue reducing the seconds
+            second-- 
+        }
+    }, 1000) // code will run once every 1000ms(1s)
+}
+
+function restartTimer() {
+    clearInterval(timer)
+    timer = null
+    second = 6
+    timerdisplay.textContent = timeformat(second)
+    startTimer()
+}
+startbtn.addEventListener('click', () => {
+    restartTimer()
 })
