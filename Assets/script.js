@@ -1,7 +1,7 @@
 const timerdisplay = document.querySelector('#timer')
-const startbtn = document.querySelector('#startbtn')
+const controls = document.querySelector('.control')
 
-let second = 5
+let second = 6
 let timer = null
 
 function timeformat (s) {
@@ -37,6 +37,12 @@ function restartTimer() {
     timerdisplay.textContent = timeformat(second)
     startTimer()
 }
-startbtn.addEventListener('click', () => {
-    restartTimer()
+
+function pauseTimer () {
+
+}
+
+
+controls.addEventListener('click', (e) => {
+    if(e.target.id === 'startbtn') restartTimer()
 })
