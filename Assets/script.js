@@ -30,6 +30,8 @@ function startTimer () {
     }, 1000) // code will run once every 1000ms(1s)
 }
 
+
+
 function restartTimer() {
     clearInterval(timer)
     timer = null
@@ -39,10 +41,18 @@ function restartTimer() {
 }
 
 function pauseTimer () {
+    clearInterval(timer)
+    timer = null
+}
 
+function resumeTimer() {
+    startTimer()
 }
 
 
 controls.addEventListener('click', (e) => {
     if(e.target.id === 'startbtn') restartTimer()
+    if(e.target.id === 'pausebtn') pauseTimer()
 })
+
+// needs a variable that can control the flow
