@@ -60,5 +60,3 @@ controls.addEventListener('click', (e) => {
     } 
     if(e.target.id === 'restart') restartTimer()
 })
-
-// needs a variable that can control the flow
