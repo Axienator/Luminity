@@ -14,13 +14,13 @@ body {
 }
 
 .top-bar {
-    font-size: 23px;
-    display: flex;
-    flex-direction: row;
-    gap: 10rem;
-    justify-content: center;
-    border-bottom: 3px solid black;
-    padding-bottom: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  font-size: 23px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid black;
 }
 
 #pomodoro,
@@ -29,23 +29,13 @@ body {
   font-weight: 500;
   padding: 0 15px; 
   border-radius: 10px;
-  transition: color, 0.1s ease-in-out; 
- 
+  transition: color, background 0.1s ease-in-out; 
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.253);
 }
 #pomodoro:hover,
 #shortbreak:hover,
 #longbreak:hover {
   color: rgb(243, 243, 243);
-}
-
-#pomodoro:active,
-#shortbreak:active,
-#longbreak:active {
-  color: rgb(31, 29, 29);
-  background-color: white;
-
 }
 
 .page-layout {

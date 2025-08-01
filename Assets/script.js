@@ -1,4 +1,4 @@
-
+const topbar = document.querySelectorAll('.top-bar div')
 const timerdisplay = document.querySelector('#timer')
 const controls = document.querySelector('.control')
 const startpausetoggle = document.querySelector('#startpausetoggle')
@@ -6,9 +6,6 @@ const restart = document.querySelector('#restart')
 
 let second = 1500
 let timer = null
-
-
-
 
 
 function timeformat (s) {
@@ -60,9 +57,38 @@ function restartTimer () {
     startpausetoggle.textContent = "Start"
 }
 
+function pomodorotimer () {
+    pauseTimer()
+    second = 1500
+    timerdisplay.textContent = timeformat(second)
+    
+}
+
+function shortbreaktimer () {
+    pauseTimer()
+    second = 300
+    timerdisplay.textContent = timeformat(second)
+    
+}
+
+function longbreaktimer () {
+    pauseTimer()
+    second = 600
+    timerdisplay.textContent = timeformat(second)
+    
+}
 
 
 controls.addEventListener('click', (e) => {
     if(e.target.id === 'startpausetoggle') handleToggleChange()
     if(e.target.id === 'restart') restartTimer()
+})
+
+topbar.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const id = tab.id
+        if (id === 'pomodoro') pomodorotimer ()
+        if (id === 'shortbreak') shortbreaktimer ()
+        if (id === 'longbreak') longbreaktimer ()
+    })
 })
