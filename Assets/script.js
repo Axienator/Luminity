@@ -3,6 +3,7 @@ const timerdisplay = document.querySelector('#timer')
 const controls = document.querySelector('.control')
 const startpausetoggle = document.querySelector('#startpausetoggle')
 const restart = document.querySelector('#restart')
+const clicksfx = document.querySelector('#click-sfx')
 
 let second = 1500
 let timer = null
@@ -17,6 +18,11 @@ function timeformat (s) {
 timerdisplay.textContent = timeformat(second) 
 
 
+function playClick () {
+    clicksfx.currentTime = 0
+    clicksfx.play()
+}
+
 // start the timer
 function startTimer () {
     if (timer !== null) return 
@@ -30,7 +36,14 @@ function startTimer () {
         } else { // if not, continue reducing the seconds
             second-- 
         }
-    }, 950) // code will run once every 850ms
+    }, 950) // code will run once every 950ms
+    playClick()
+}
+
+function resetToggle () {
+    startpausetoggle.classList.remove('Pause')
+    startpausetoggle.textContent='Start'
+
 }
 
 function handleToggleChange () {
@@ -42,6 +55,7 @@ function handleToggleChange () {
         startpausetoggle.textContent="Resume"
         pauseTimer()
     }
+    playClick()
 }
 
 function pauseTimer () {
@@ -55,27 +69,31 @@ function restartTimer () {
     timerdisplay.textContent = timeformat(second)
     startpausetoggle.classList.remove('Pause')
     startpausetoggle.textContent = "Start"
+    playClick()
 }
 
 function pomodorotimer () {
     pauseTimer()
     second = 1500
     timerdisplay.textContent = timeformat(second)
-    
+    resetToggle()    
+    playClick()
 }
 
 function shortbreaktimer () {
     pauseTimer()
     second = 300
     timerdisplay.textContent = timeformat(second)
-    
+    resetToggle() 
+    playClick()
 }
 
 function longbreaktimer () {
     pauseTimer()
     second = 600
     timerdisplay.textContent = timeformat(second)
-    
+    resetToggle() 
+    playClick()
 }
 
 
