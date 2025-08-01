@@ -4,6 +4,7 @@ const controls = document.querySelector('.control')
 const startpausetoggle = document.querySelector('#startpausetoggle')
 const restart = document.querySelector('#restart')
 const clicksfx = document.querySelector('#click-sfx')
+const countdownsfx = document.querySelector('#countdown-sfx')
 
 let second = 1500
 let timer = null
@@ -17,6 +18,10 @@ function timeformat (s) {
 // initial display of the timer(5 seconds)
 timerdisplay.textContent = timeformat(second) 
 
+function playcountdown () {
+    countdownsfx.currentTime = 0
+    countdownsfx.play()
+}
 
 function playClick () {
     clicksfx.currentTime = 0
@@ -36,8 +41,9 @@ function startTimer () {
         } else { // if not, continue reducing the seconds
             second-- 
         }
-    }, 950) // code will run once every 950ms
+    }, 1000) // code will run once every 1000ms
     playClick()
+    playcountdown()
 }
 
 function resetToggle () {
