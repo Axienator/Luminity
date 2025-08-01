@@ -1,3 +1,4 @@
+
 const timerdisplay = document.querySelector('#timer')
 const controls = document.querySelector('.control')
 const startpausetoggle = document.querySelector('#startpausetoggle')
@@ -5,6 +6,10 @@ const restart = document.querySelector('#restart')
 
 let second = 1500
 let timer = null
+
+
+
+
 
 function timeformat (s) {
     const minutes = Math.floor(s / 60) // Converts 60 seconds to 1 minute

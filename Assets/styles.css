@@ -1,3 +1,9 @@
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 body {
     font-family: 'Inter', sans-serif;
@@ -8,11 +14,36 @@ body {
 }
 
 .top-bar {
-    font-size: 20px;
+    font-size: 23px;
     display: flex;
     flex-direction: row;
     gap: 10rem;
     justify-content: center;
+    border-bottom: 3px solid black;
+    padding-bottom: 10px;
+}
+
+#pomodoro,
+#shortbreak,
+#longbreak {
+  padding: 0 10px; /* 👈 Set padding normally */
+  border-radius: 10px;
+  transition: color 150ms ease-in-out; /* optional: smooth hover effect */
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  background-color: antiquewhite;
+}
+#pomodoro:hover,
+#shortbreak:hover,
+#longbreak:hover {
+  font-weight: bold;
+  color: rgb(184, 220, 255);
+}
+
+#pomodoro:active,
+#shortbreak:active,
+#longbreak:active {
+  color: rgb(81, 89, 97);
 }
 
 .page-layout {
@@ -49,7 +80,7 @@ body {
   background-color: #ffffff;
   font-size: 20px;
   text-align: center;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.5rem ;
   border-radius: 20px;
   border: 2px solid ;
   cursor: pointer;
@@ -72,13 +103,14 @@ body {
   font-size: 20px;
   padding: 0.5rem 1.5rem;
   border-radius: 20px;
-  border: 1px solid ;
+  border: 2px solid ;
   cursor: pointer;
 }
 
 .restartbtn:hover {
-    background-color: #50C2C9;
+    background-color: rgba(130, 156, 177, 0.5);
 }
+
 
 .restartbtn:active {
     background-color: #42989c;
