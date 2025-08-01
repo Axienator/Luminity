@@ -26,24 +26,26 @@ body {
 #pomodoro,
 #shortbreak,
 #longbreak {
-  padding: 0 10px; /* 👈 Set padding normally */
+  font-weight: 500;
+  padding: 0 15px; 
   border-radius: 10px;
-  transition: color 150ms ease-in-out; /* optional: smooth hover effect */
+  transition: color, 0.1s ease-in-out; 
+ 
   cursor: pointer;
-  color: rgb(0, 0, 0);
-  background-color: antiquewhite;
+  background-color: rgba(255, 255, 255, 0.253);
 }
 #pomodoro:hover,
 #shortbreak:hover,
 #longbreak:hover {
-  font-weight: bold;
-  color: rgb(184, 220, 255);
+  color: rgb(243, 243, 243);
 }
 
 #pomodoro:active,
 #shortbreak:active,
 #longbreak:active {
-  color: rgb(81, 89, 97);
+  color: rgb(31, 29, 29);
+  background-color: white;
+
 }
 
 .page-layout {
