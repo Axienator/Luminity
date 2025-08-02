@@ -4,11 +4,12 @@ const controls = document.querySelector('.control')
 const startpausetoggle = document.querySelector('#startpausetoggle')
 const restart = document.querySelector('#restart')
 const clicksfx = document.querySelector('#click-sfx')
-const countdownsfx = document.querySelector('#countdown-sfx')
+
 
 let second = 1500
 let timer = null
-
+let lastPlay = 0
+const cooldown = 300
 
 function timeformat (s) {
     const minutes = Math.floor(s / 60) // Converts 60 seconds to 1 minute
@@ -18,17 +19,16 @@ function timeformat (s) {
 // initial display of the timer(5 seconds)
 timerdisplay.textContent = timeformat(second) 
 
-function playcountdown () {
-    countdownsfx.currentTime = 0
-    countdownsfx.play()
-}
-
 function playClick () {
+    const now = Date.now()
+    if (now - lastPlay > cooldown) {
     clicksfx.currentTime = 0
     clicksfx.play()
+    lastPlay = now
+    }
 }
 
-// start the timer
+
 function startTimer () {
     if (timer !== null) return 
     timer = setInterval(() => {
@@ -61,6 +61,7 @@ function handleToggleChange () {
         startpausetoggle.textContent="Resume"
         pauseTimer()
     }
+
     playClick()
 }
 
