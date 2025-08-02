@@ -4,8 +4,6 @@ const controls = document.querySelector('.control')
 const startpausetoggle = document.querySelector('#startpausetoggle')
 const restart = document.querySelector('#restart')
 const clicksfx = document.querySelector('#click-sfx')
-const settings = document.querySelector('#settings-panel')
-const sidebar = document.querySelector('#sidebar-list')
 
 const pomodoro_duration = 1500
 const shortbreak_duration = 300
@@ -108,12 +106,6 @@ function longbreaktimer () {
     resetToggle() 
     playClick()
 }
-
-settings.addEventListener ('click', (x) => {
-    if(x.target.id === 'settings-panel') {
-        sidebar.style.display='flex'
-    }
-})
 
 // Events of Start / Pause
 controls.addEventListener('click', (e) => {

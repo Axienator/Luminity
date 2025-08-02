@@ -68,6 +68,7 @@ body {
 
 .hidden {
   display: none;
+  flex-direction: column;
 }
 
 
