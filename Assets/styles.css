@@ -21,8 +21,9 @@ body {
   font-size: 23px;
   padding-bottom: 10px;
   border-bottom: 3px solid black;
+  color: white;
+  text-shadow: 1px 3px 4px #000000;
 }
-
 #pomodoro,
 #shortbreak,
 #longbreak {
@@ -35,7 +36,18 @@ body {
 #pomodoro:hover,
 #shortbreak:hover,
 #longbreak:hover {
-  color: rgb(243, 243, 243);
+  color: rgb(196, 189, 189);
+}
+
+
+.settings {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 35px;
+  padding: 0 15px; 
+  transition: color, background 0.1s ease-in-out; 
+  cursor: pointer;
 }
 
 .page-layout {
