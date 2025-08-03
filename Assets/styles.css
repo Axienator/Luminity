@@ -23,6 +23,15 @@ body {
   text-shadow: 1px 3px 4px #000000;
 }
 
+.left-items {
+  display: flex;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .center-items{
   display: flex;
   gap: 5rem;
@@ -52,18 +61,22 @@ body {
   cursor: pointer;
 }
 
-.settings-icon {
+#lightmode,
+#settings-icon {
   display: flex;
   align-items: center;
   font-weight: 500;
   font-size: 35px;
   padding: 0 15px; 
-  transition: color, background 0.1s ease-in-out; 
   cursor: pointer;
 }
 
-.settings-icon:hover{
-  color: rgb(141, 118, 118);
+#lightmode:hover {
+  color: rgb(110, 95, 95);
+}
+
+#settings-icon:hover{
+  color: rgb(110, 95, 95);
 }
 
 .hidden {
@@ -113,7 +126,7 @@ body {
   font-variant-numeric: tabular-nums;
   font-size: 10em;
   font-weight: bold;
-  color: rgb(245, 245, 245);
+  color: #fde5e5;
   text-align: center;
 } 
 
@@ -141,3 +154,4 @@ body {
     background-color: #42989c;
     transform: translateY(-2px);
 }
+

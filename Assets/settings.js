@@ -3,8 +3,8 @@ const settings = document.querySelector('#settings-icon')
 
 function sidebarToggle () {
     
-    settings.classList.toggle('show')
-    if(settings.classList.contains('show')) {
+    sidebar.classList.toggle('show')
+    if(sidebar.classList.contains('show')) {
         sidebar.style.display='flex'
     } else {
         sidebar.style.display='none'

@@ -52,17 +52,16 @@ function startTimer () {
     playClick()
     awayfromkeyboard ()
 }
-
+// AFK State
 function awayfromkeyboard () {
     setTimeout(() => {
         document.querySelector('.page-layout').classList.add('layout-move-top')
     }, 10000)
 }
-
+// Normal State
 function notawayfromkeyboard () {
     document.querySelector('.page-layout').classList.remove('layout-move-top')
 }
-
 // Reset to original state
 function resetToggle () {
     startpausetoggle.classList.remove('Pause')
@@ -101,6 +100,7 @@ function restartTimer () {
 // Pomodoro Time
 function pomodorotimer () {
     pauseTimer()
+    currentMode = 'pomodoro'
     second = pomodoro_duration
     timerdisplay.textContent = timeformat(second)
     resetToggle()    
@@ -127,7 +127,6 @@ function longbreaktimer () {
     playClick()
     notawayfromkeyboard()
 }
-
 // Events of Start / Pause
 controls.addEventListener('click', (e) => {
     if(e.target.id === 'startpausetoggle') handleToggleChange()
