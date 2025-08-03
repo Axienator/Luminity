@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-image: url(/pictures/4kdownload2.jpg);
+    background-image: url(/pictures/peakpx.jpg);
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
@@ -18,7 +18,7 @@ body {
   justify-content: center;
   font-size: 23px;
   padding-bottom: 10px;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid white;
   color: white;
   text-shadow: 1px 3px 4px #000000;
 }
@@ -67,17 +67,38 @@ body {
 }
 
 .hidden {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 20px;
+  position: absolute;
+  top: 20px;
+  right: 0;
   display: none;
   flex-direction: column;
+  width: 20rem;
+  margin-top: 3.5rem;
+  gap: 2rem;
+  height: 100vh;
+  background-color: rgba(70, 64, 64, 0.452);
+  transform: translateX(10px);
+  
 }
 
-
+.show {
+  display: flex;
+}
 
 .page-layout {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.page-layout.layout-move-top {
+  margin: -16em;
+  opacity: 0.3;
+  transition: all 2s ease;
 }
 
 .container {
@@ -89,7 +110,8 @@ body {
 }
 
 .timer-layout {
-  font-size: 15em;
+  font-variant-numeric: tabular-nums;
+  font-size: 10em;
   font-weight: bold;
   color: rgb(245, 245, 245);
   text-align: center;
@@ -98,13 +120,12 @@ body {
 .control {
   display: flex;
   flex-direction: row;
-  margin-right: 3rem ;
-  gap: 5rem;
-   margin-top: 5rem;
+  margin-right: 1.5rem ;
+  gap: 3rem;
+   margin-top: 3rem;
 }
-
-.startpausebtn {
-  background-color: #ffffff;
+.button {
+  background-color: #fde5e5;
   font-size: 20px;
   text-align: center;
   padding: 0.5rem 1.5rem ;
@@ -112,34 +133,11 @@ body {
   border: 2px solid ;
   cursor: pointer;
 }
-
-.startpausebtn:hover {
+.button:hover {
     background-color: rgba(130, 156, 177, 0.5);
 }
 
-.startpausebtn:active {
-    background-color: #42989c;
-    transform: translateY(-2px);
-}
-
-.restartbtn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #ffffff;
-  font-size: 20px;
-  padding: 0.5rem 1.5rem;
-  border-radius: 20px;
-  border: 2px solid ;
-  cursor: pointer;
-}
-
-.restartbtn:hover {
-    background-color: rgba(130, 156, 177, 0.5);
-}
-
-
-.restartbtn:active {
+.button:active {
     background-color: #42989c;
     transform: translateY(-2px);
 }

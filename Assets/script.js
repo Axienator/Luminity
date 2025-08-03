@@ -1,16 +1,18 @@
-const topbar = document.querySelectorAll('.top-bar div')
+const topbar = document.querySelectorAll('#pomodoro, #shortbreak, #longbreak')
 const timerdisplay = document.querySelector('#timer')
 const controls = document.querySelector('.control')
 const startpausetoggle = document.querySelector('#startpausetoggle')
 const restart = document.querySelector('#restart')
 const clicksfx = document.querySelector('#click-sfx')
 
-const pomodoro_duration = 1500
+
+const pomodoro_duration = 1800
 const shortbreak_duration = 300
 const longbreak_duration = 600
 
 
 let second = pomodoro_duration
+let currentMode = 'pomodoro'
 let timer = null
 let lastPlay = 0
 const cooldown = 150
@@ -20,7 +22,7 @@ timerdisplay.textContent = timeformat(second)
 // Display of the Time
 function timeformat (s) {
     const minutes = Math.floor(s / 60) // Converts 60 seconds to 1 minute
-    const remainingSeconds = s   % 60
+    const remainingSeconds = s % 60
     return `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}` // Format of the timer (00:00)
 }
 // Click sfx
@@ -48,7 +50,19 @@ function startTimer () {
         }
     }, 1000) // code will run once every 1000ms
     playClick()
+    awayfromkeyboard ()
 }
+
+function awayfromkeyboard () {
+    setTimeout(() => {
+        document.querySelector('.page-layout').classList.add('layout-move-top')
+    }, 10000)
+}
+
+function notawayfromkeyboard () {
+    document.querySelector('.page-layout').classList.remove('layout-move-top')
+}
+
 // Reset to original state
 function resetToggle () {
     startpausetoggle.classList.remove('Pause')
@@ -65,8 +79,8 @@ function handleToggleChange () {
         startpausetoggle.textContent="Resume"
         pauseTimer()
     }
-
     playClick()
+    notawayfromkeyboard()
 }
 // Pause Functionality
 function pauseTimer () {
@@ -76,11 +90,13 @@ function pauseTimer () {
 // Restart Functionality
 function restartTimer () {
     pauseTimer()
-    second = pomodoro_duration
+    if (currentMode === 'pomodoro') second = pomodoro_duration
+    if (currentMode === 'shortbreak') second = shortbreak_duration
+    if (currentMode === 'longbreak') second = longbreak_duration
     timerdisplay.textContent = timeformat(second)
-    startpausetoggle.classList.remove('Pause')
-    startpausetoggle.textContent = "Start"
+    resetToggle()
     playClick()
+    notawayfromkeyboard()
 }
 // Pomodoro Time
 function pomodorotimer () {
@@ -89,22 +105,27 @@ function pomodorotimer () {
     timerdisplay.textContent = timeformat(second)
     resetToggle()    
     playClick()
+    notawayfromkeyboard()
 }
 // Short break Time
 function shortbreaktimer () {
     pauseTimer()
+    currentMode = 'shortbreak'
     second = shortbreak_duration
     timerdisplay.textContent = timeformat(second)
     resetToggle() 
     playClick()
+    notawayfromkeyboard()
 }
 // Long break Time
 function longbreaktimer () {
     pauseTimer()
+    currentMode = 'longbreak'
     second = longbreak_duration
     timerdisplay.textContent = timeformat(second)
     resetToggle() 
     playClick()
+    notawayfromkeyboard()
 }
 
 // Events of Start / Pause
