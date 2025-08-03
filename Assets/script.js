@@ -4,21 +4,34 @@ const controls = document.querySelector('.control')
 const startpausetoggle = document.querySelector('#startpausetoggle')
 const restart = document.querySelector('#restart')
 const clicksfx = document.querySelector('#click-sfx')
-
+const currentMode = document.querySelector('#currentMode')
 
 const pomodoro_duration = 1800
 const shortbreak_duration = 300
 const longbreak_duration = 600
 
-
+let timerMode = 'pomodoro'
 let second = pomodoro_duration
-let currentMode = 'pomodoro'
 let timer = null
 let lastPlay = 0
 const cooldown = 150
 
 timerdisplay.textContent = timeformat(second) 
 
+function Mode () {
+    if(timerMode === 'pomodoro') {
+        currentMode.textContent='Pomodoro'
+        second = pomodoro_duration
+    } 
+    if(timerMode === 'shortbreak') {
+        currentMode.textContent='Short break'
+        second = shortbreak_duration
+    }
+    if(timerMode === 'longbreak') {
+        currentMode.textContent='Long break'
+        second = longbreak_duration
+    }
+}
 // Display of the Time
 function timeformat (s) {
     const minutes = Math.floor(s / 60) // Converts 60 seconds to 1 minute
@@ -56,11 +69,13 @@ function startTimer () {
 function awayfromkeyboard () {
     setTimeout(() => {
         document.querySelector('.page-layout').classList.add('layout-move-top')
+        document.querySelector('.control').classList.add('Afk-controls')
     }, 10000)
 }
 // Normal State
 function notawayfromkeyboard () {
     document.querySelector('.page-layout').classList.remove('layout-move-top')
+    document.querySelector('.control').classList.remove('Afk-controls')
 }
 // Reset to original state
 function resetToggle () {
@@ -100,32 +115,35 @@ function restartTimer () {
 // Pomodoro Time
 function pomodorotimer () {
     pauseTimer()
-    currentMode = 'pomodoro'
+    timerMode = 'pomodoro'
     second = pomodoro_duration
     timerdisplay.textContent = timeformat(second)
     resetToggle()    
     playClick()
     notawayfromkeyboard()
+    Mode()
 }
 // Short break Time
 function shortbreaktimer () {
     pauseTimer()
-    currentMode = 'shortbreak'
+    timerMode = 'shortbreak'
     second = shortbreak_duration
     timerdisplay.textContent = timeformat(second)
     resetToggle() 
     playClick()
     notawayfromkeyboard()
+    Mode()
 }
 // Long break Time
 function longbreaktimer () {
     pauseTimer()
-    currentMode = 'longbreak'
+    timerMode = 'longbreak'
     second = longbreak_duration
     timerdisplay.textContent = timeformat(second)
     resetToggle() 
     playClick()
     notawayfromkeyboard()
+    Mode()
 }
 // Events of Start / Pause
 controls.addEventListener('click', (e) => {

@@ -13,6 +13,7 @@ body {
     overflow: hidden;
 }
 
+#currentMode,
 .top-bar {
   display: flex;
   justify-content: center;
@@ -109,9 +110,12 @@ body {
 }
 
 .page-layout.layout-move-top {
-  margin: -16em;
-  opacity: 0.3;
-  transition: all 2s ease;
+  opacity: 0.4;
+  transition: all 1.5s ease;
+}
+
+.control.Afk-controls {
+  opacity: 0;
 }
 
 .container {
@@ -137,6 +141,7 @@ body {
   gap: 3rem;
    margin-top: 3rem;
 }
+
 .button {
   background-color: #fde5e5;
   font-size: 20px;
@@ -146,6 +151,7 @@ body {
   border: 2px solid ;
   cursor: pointer;
 }
+
 .button:hover {
     background-color: rgba(130, 156, 177, 0.5);
 }
