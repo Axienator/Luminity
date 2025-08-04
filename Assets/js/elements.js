@@ -4,7 +4,9 @@ export const elements = {
     timerDisplay: document.querySelector('#timer'),
     StartPausetoggle: document.querySelector('#startpausetoggle'),
     restart: document.querySelector('#restart'),
+    music: document.querySelector('#music-icon'),
     clickSFX: document.querySelector('#click-sfx'),
+    breakSFX: document.querySelector('#break-sfx'),
     colorScheme: document.querySelector('#colorMode'),
     controlPanel: document.querySelector('.control'),
     pageLayout: document.querySelector('.page-layout'),
@@ -12,9 +14,10 @@ export const elements = {
     
 }
 export const Duration = {
-    pomodoro: 1500,
-    shortbreak: 300,
-    longbreak: 600
+    pomodoro: 5,
+    shortbreak: 3,
+    longbreak: 10,
+    counterbeforelongbreak: 4
 }
 export const settings = {
     sidebar: document.querySelector('#sidebar-list'),
@@ -27,6 +30,8 @@ export const state = {
     timer: null,
     lastClickTime: 0,
     cooldown: 150,
-    afkTimeout: null 
+    afkTimeout: null,
+    PomodoroCounter: 0,
+    isRunning: false
 }
 

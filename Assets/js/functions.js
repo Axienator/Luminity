@@ -21,25 +21,49 @@ export const UtilityFunctions = {
         }
     },
 
-    StartTimer () {
-        if(state.timer !== null) return
-        elements.timerDisplay.textContent = this.Timeformat(state.seconds)
+    StartTimer() {
+        if (state.timer !== null) return
+        state.isRunning = true
+        elements.timerDisplay.textContent = this.Timeformat(state.seconds) 
+        elements.StartPausetoggle.textContent = 'Pause'
+
         state.timer = setInterval(() => {
-            if(state.seconds == 0) {
+            if (state.seconds === 0) {
                 clearInterval(state.timer)
                 state.timer = null
+                state.isRunning = false
+                OtherFunctions.playBreak()
+
+                // Switch to the next mode
+                if (state.mode === 'pomodoro') {
+                    state.PomodoroCounter++
+
+                    if (state.PomodoroCounter % Duration.counterbeforelongbreak === 0) {
+                        UtilityFunctions.longbreakTimer()
+                    } else {
+                        UtilityFunctions.shortbreakTimer()
+                    }
+                } else if (state.mode === 'shortbreak' || state.mode === 'longbreak') {
+                    UtilityFunctions.pomodoroTimer()
+                }
+
+                // Start the next session automatically
+                UtilityFunctions.StartTimer()
             } else {
                 state.seconds--
                 elements.timerDisplay.textContent = this.Timeformat(state.seconds)
             }
-        }, 1000)
-        OtherFunctions.playClick()       
-        this.AFK()
+        }, 1000);
+
+        OtherFunctions.playClick();
+        this.AFK();
     },
+
 
     pauseTimer () {
         clearInterval(state.timer)
         state.timer = null
+        isRunning = false
         
     },
 

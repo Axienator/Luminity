@@ -34,3 +34,15 @@ body.lightMode {
   color: #2a2525;
   text-shadow: 1px 3px 4px #bababa;
 }
+
+.top-bar.lightMode {
+  border-bottom: 3px solid #2d2525;
+}
+
+#startpausetoggle.lightMode,
+#restart.lightMode,
+#music-icon.lightMode {
+  background-color: #2d2525;
+  color: #bababa;
+}
+
