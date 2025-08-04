@@ -1,0 +1,14 @@
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: url(/pictures/peakpx.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}

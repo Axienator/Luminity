@@ -1,0 +1,36 @@
+
+#colorMode.nightMode {
+    color: #827272;
+}
+
+body.lightMode {
+    background-image: url(/pictures/peakpxlight.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+#currentMode.currentlightMode {
+  color: #514b4b;
+  border-bottom: 3px solid #2d2525;
+  text-shadow: 1px 3px 4px #bababa;
+}
+
+.timer-layout.timerlightMode {
+  color: #2d2525;
+}
+
+
+#pomodoro.lightMode,
+#shortbreak.lightMode,
+#longbreak.lightMode {
+  color: #514b4b;
+  text-shadow: 1px 3px 4px #bababa;
+}
+
+#pomodoro.lightMode:hover,
+#shortbreak.lightMode:hover,
+#longbreak.lightMode:hover {
+  color: #2a2525;
+  text-shadow: 1px 3px 4px #bababa;
+}
