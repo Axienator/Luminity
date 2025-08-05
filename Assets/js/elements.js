@@ -32,6 +32,5 @@ export const state = {
     cooldown: 150,
     afkTimeout: null,
     PomodoroCounter: 0,
-    isRunning: false
 }
 

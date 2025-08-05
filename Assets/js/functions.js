@@ -23,7 +23,7 @@ export const UtilityFunctions = {
 
     StartTimer() {
         if (state.timer !== null) return
-        state.isRunning = true
+
         elements.timerDisplay.textContent = this.Timeformat(state.seconds) 
         elements.StartPausetoggle.textContent = 'Pause'
 
@@ -31,7 +31,6 @@ export const UtilityFunctions = {
             if (state.seconds === 0) {
                 clearInterval(state.timer)
                 state.timer = null
-                state.isRunning = false
                 OtherFunctions.playBreak()
 
                 // Switch to the next mode
@@ -63,7 +62,7 @@ export const UtilityFunctions = {
     pauseTimer () {
         clearInterval(state.timer)
         state.timer = null
-        isRunning = false
+
         
     },
 
@@ -101,13 +100,12 @@ export const UtilityFunctions = {
     },
 
     resetToggle () {
-        elements.StartPausetoggle.classList.remove('Pause')
         elements.StartPausetoggle.textContent = 'Start'
     },
 
     handleToggleChange () {
-        elements.StartPausetoggle.classList.toggle('Pause')
-        if(elements.StartPausetoggle.classList.contains('Pause')) {
+        elements.StartPausetoggle.classList.toggle('Resume')
+        if(elements.StartPausetoggle.classList.contains('Resume')) {
             elements.StartPausetoggle.textContent = 'Pause'
             this.StartTimer()
         } else {
