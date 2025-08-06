@@ -66,6 +66,19 @@ export const OtherFunctions = {
             document.querySelector('.top-bar').classList.remove('lightMode')
         }
         this.playClick()
-    }
+    },
 
+    musicPlaylist () {
+        document.querySelector('.music-layout').classList.add('show')
+        document.querySelector('#music-container').classList.add('show')
+
+        this.playClick()
+    },
+
+    musicExitdisplay () {
+        document.querySelector('.music-layout').classList.remove('show')
+        document.querySelector('#music-container').classList.remove('show')
+
+        this.playClick()
+    }
 }

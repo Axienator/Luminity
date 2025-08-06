@@ -5,6 +5,7 @@ export const elements = {
     StartPausetoggle: document.querySelector('#startpausetoggle'),
     restart: document.querySelector('#restart'),
     music: document.querySelector('#music-icon'),
+    musicExit: document.querySelector('#exitmusic'),
     clickSFX: document.querySelector('#click-sfx'),
     breakSFX: document.querySelector('#break-sfx'),
     colorScheme: document.querySelector('#colorMode'),
@@ -14,10 +15,10 @@ export const elements = {
     
 }
 export const Duration = {
-    pomodoro: 5,
-    shortbreak: 3,
-    longbreak: 10,
-    counterbeforelongbreak: 4
+    pomodoro: 1500,
+    shortbreak: 300,
+    longbreak: 600,
+    counterbeforelongbreak: 3
 }
 export const settings = {
     sidebar: document.querySelector('#sidebar-list'),

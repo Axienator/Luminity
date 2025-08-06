@@ -4,7 +4,7 @@
 }
 
 body.lightMode {
-    background-image: url(/pictures/peakpxlight.jpg);
+    background-image: url(/pictures/lightmodebg2.jpg);
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
@@ -31,7 +31,7 @@ body.lightMode {
 #pomodoro.lightMode:hover,
 #shortbreak.lightMode:hover,
 #longbreak.lightMode:hover {
-  color: #2a2525;
+  color: rgba(0, 0, 0, 0.916);
   text-shadow: 1px 3px 4px #bababa;
 }
 
@@ -46,3 +46,10 @@ body.lightMode {
   color: #bababa;
 }
 
+
+
+#startpausetoggle.lightMode:hover,
+#restart.lightMode:hover,
+#music-icon.lightMode:hover {
+  background-color: rgba(45, 37, 37, 0.807);
+}

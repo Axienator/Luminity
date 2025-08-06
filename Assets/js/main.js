@@ -27,6 +27,14 @@ settings.settingoptions.addEventListener ('click', (z) => {
     if(z.target.id === 'settings-icon') OtherFunctions.sidebarToggle()
 })
 
+elements.music.addEventListener ('click', () => {
+    OtherFunctions.musicPlaylist()
+})
+
+elements.musicExit.addEventListener('click', () => {
+    OtherFunctions.musicExitdisplay()
+})
+
 document.addEventListener('click', () => {
     if(state.isAFK) {
         UtilityFunctions.exitAFK()
