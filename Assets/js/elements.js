@@ -11,7 +11,8 @@ export const elements = {
     colorScheme: document.querySelector('#colorMode'),
     controlPanel: document.querySelector('.control'),
     pageLayout: document.querySelector('.page-layout'),
-    currentModeDisplay: document.querySelector('#currentMode')
+    currentModeDisplay: document.querySelector('#currentMode'),
+    changebg: document.querySelector('#cebackground')
     
 }
 export const Duration = {

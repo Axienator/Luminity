@@ -81,6 +81,9 @@ export const UtilityFunctions = {
         state.afkTimeout = setTimeout(() => {
             state.isAFK = true
             elements.pageLayout.classList.add('AFK')
+            elements.controlPanel.classList.add('AFK')
+            elements.currentModeDisplay.classList.add('AFK')
+            elements.TopbarTabs.classList.add('AFK')
         }, 10000)
     },
 
@@ -88,6 +91,9 @@ export const UtilityFunctions = {
         clearTimeout(state.afkTimeout)
         state.isAFK = false
         elements.pageLayout.classList.remove('AFK')
+        elements.controlPanel.classList.remove('AFK')
+        elements.currentModeDisplay.classList.remove('AFK')
+        elements.TopbarTabs.classList.remove('AFK')
         
     },
 

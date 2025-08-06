@@ -1,5 +1,5 @@
 //Other.js
-import { elements, settings, state } from "./elements.js    "
+import { elements, settings, state } from "./elements.js"
 
 export const OtherFunctions = {
 
@@ -73,6 +73,7 @@ export const OtherFunctions = {
         document.querySelector('#music-container').classList.add('show')
 
         this.playClick()
+        this.musicAutoPlay()
     },
 
     musicExitdisplay () {
@@ -80,5 +81,9 @@ export const OtherFunctions = {
         document.querySelector('#music-container').classList.remove('show')
 
         this.playClick()
+    },
+
+    changeBackground () {
+        document.body.classList.toggle('change')
     }
 }

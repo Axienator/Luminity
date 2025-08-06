@@ -10,9 +10,8 @@
     <link rel="shortcut icon" href="pictures/Clarity.png" type="image/x-icon">
     <audio id="click-sfx" src="sounds/click.mp3" preload="auto"> </audio>
     <audio id="break-sfx" src="sounds/shortbreaknotif.mp3" preload="auto"> </audio>
+    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
-
-
 
 <body>
     <div class="top-bar">
@@ -32,8 +31,9 @@
 
             <aside id="settings-panel">
                 <section class="hidden" id="sidebar-list">
-                <div class="settings-option">Customize Timer</div>
-                <div class="settings-option">Music Settings</div>
+                <div class="settings-option" id="cetimer">Customize Timer</div>
+                <div class="settings-option" id="mcsettings">Music Settings</div>
+                <div class="settings-option" id="cebackground">Change background</div>
                 </section>
             </aside>
             </div>
@@ -63,8 +63,9 @@
                                         <div id="musictopright"><button id="exitmusic">[ x ]</button></div>
                                     </div>
 
-                                   <iframe width="560" height="315" src="https://www.youtube.com/embed/KmOVNVZEP9o?si=awkp9vrvqfo_7ziU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                   
+                                    <div id="youtube-player">
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/UNbqQBcxZyE?si=oaywTzyUAkAl_44h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
                                 </div>  
                             </div>
                         </div>  

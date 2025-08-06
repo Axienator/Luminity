@@ -8,6 +8,8 @@ elements.timerDisplay.textContent = UtilityFunctions.Timeformat(state.seconds)
 elements.controlPanel.addEventListener('click', (x) => {
     if(x.target.id === 'startpausetoggle') UtilityFunctions.handleToggleChange()
     if(x.target.id === 'restart') UtilityFunctions.restartTimer()
+
+        
 })
 
 elements.TopbarTabs.forEach(tab => {
@@ -35,10 +37,14 @@ elements.musicExit.addEventListener('click', () => {
     OtherFunctions.musicExitdisplay()
 })
 
-document.addEventListener('click', () => {
+document.addEventListener('mousemove', () => {
     if(state.isAFK) {
         UtilityFunctions.exitAFK()
         state.isAFK = false
     } 
     UtilityFunctions.resetAFKTimer()
+})
+
+elements.changebg.addEventListener('click', () => {
+    OtherFunctions.changeBackground()
 })

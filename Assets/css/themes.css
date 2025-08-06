@@ -1,6 +1,6 @@
 
 #colorMode.nightMode {
-    color: #827272;
+    color: #675858;
 }
 
 body.lightMode {
@@ -11,28 +11,29 @@ body.lightMode {
 }
 
 #currentMode.currentlightMode {
-  color: #514b4b;
+  color: #675858;
   border-bottom: 3px solid #2d2525;
   text-shadow: 1px 3px 4px #bababa;
 }
 
 .timer-layout.timerlightMode {
-  color: #2d2525;
+  color: #675858;
 }
 
 
 #pomodoro.lightMode,
 #shortbreak.lightMode,
 #longbreak.lightMode {
-  color: #514b4b;
+  color: #675858;
   text-shadow: 1px 3px 4px #bababa;
 }
 
 #pomodoro.lightMode:hover,
 #shortbreak.lightMode:hover,
 #longbreak.lightMode:hover {
-  color: rgba(0, 0, 0, 0.916);
+  color: #c4b7b7;
   text-shadow: 1px 3px 4px #bababa;
+  background-color: #534c4c9e;
 }
 
 .top-bar.lightMode {
@@ -42,11 +43,9 @@ body.lightMode {
 #startpausetoggle.lightMode,
 #restart.lightMode,
 #music-icon.lightMode {
-  background-color: #2d2525;
-  color: #bababa;
+  background-color: #171313;
+  color: #baa8a8;
 }
-
-
 
 #startpausetoggle.lightMode:hover,
 #restart.lightMode:hover,
