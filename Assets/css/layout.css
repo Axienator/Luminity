@@ -63,7 +63,7 @@
   color: #fde5e5;
   text-align: center;
 } 
-
+.ceTimerlayout,
 .music-layout {
   position: fixed;
   top: 0;
@@ -81,7 +81,7 @@
 .music-layout.show {
   display: flex;
 }
-
+#ceTimerContainer,
 #music-container {
   background-color: rgb(43, 37, 37);
   max-width: 50rem;
@@ -122,6 +122,10 @@
   flex-direction: column;
   align-items: center; 
   gap: 1rem; 
+}
+
+.ceTimerlayout.show{
+  display: flex;
 }
 
 

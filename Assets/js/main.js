@@ -48,3 +48,11 @@ document.addEventListener('mousemove', () => {
 elements.changebg.addEventListener('click', () => {
     OtherFunctions.changeBackground()
 })
+
+elements.changetimer.addEventListener('click', () => {
+    OtherFunctions.changeTimer ()
+})
+
+elements.ceTimerExit.addEventListener('click', () => {
+    OtherFunctions.ceTimerExitdisplay ()
+})

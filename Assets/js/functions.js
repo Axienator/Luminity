@@ -129,7 +129,6 @@ export const UtilityFunctions = {
         this.resetToggle()
         OtherFunctions.playClick()
         this.DisplayMode()
-
     },
 
     shortbreakTimer () {

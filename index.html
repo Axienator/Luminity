@@ -10,14 +10,13 @@
     <link rel="shortcut icon" href="pictures/Clarity.png" type="image/x-icon">
     <audio id="click-sfx" src="sounds/click.mp3" preload="auto"> </audio>
     <audio id="break-sfx" src="sounds/shortbreaknotif.mp3" preload="auto"> </audio>
-    <script src="https://www.youtube.com/iframe_api"></script>
 </head>
 
 <body>
     <div class="top-bar">
 
         <div class="left-items">
-            <span id="colorMode">☀</span>
+            <span id="colorMode">⏾</span>
         </div>
 
         <div class="center-items">
@@ -32,7 +31,6 @@
             <aside id="settings-panel">
                 <section class="hidden" id="sidebar-list">
                 <div class="settings-option" id="cetimer">Customize Timer</div>
-                <div class="settings-option" id="mcsettings">Music Settings</div>
                 <div class="settings-option" id="cebackground">Change background</div>
                 </section>
             </aside>
@@ -45,10 +43,41 @@
     <div class="page-layout">
         <div class="contents">
             <div class="container">
+
+
+                <div class="ceTimerlayout">
+                    <div id="ceTimerContainer">
+                        <div class="ceTimerContent">
+                            <div id="ceTimertopbar">
+                                <div id="ceTimertopright"> <button id="exitceTimer">[ x ]</button> </div>
+                            </div>
+
+                            <form action="index.html" id="ceTimerform">
+                                <label for="work"> 
+                                    <input type="number" max="100" min="0" id="work" name="work_timer">
+                                    Work
+                                </label>
+                                <br />
+                                <label for="sbreak"> 
+                                    <input type="number" max="25" min="0" id="sbreak" name="sbreak_timer">
+                                    Short break
+                                </label>
+                                <br />
+                                <label for="lbreak"> 
+                                    <input type="number" max="50" min="0" id="sbreak" name="lbreak_timer">
+                                    Long break
+                                </label>
+                                <input type="submit" value="submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+
                 <span id="currentMode">Pomodoro</span>
                 <div class="timer-layout" id="timer">00:00</div>
-
                 <div class="control">
+
                     <button class="button" id="startpausetoggle">Start</button>
                     <button class="button" id="restart">↺</button>
                     <div class="music">
@@ -57,14 +86,13 @@
                             <div id="music-container">
                                 <div class="music-contents">
                                     <div id="musictopbar">
-
                                         <div id="musictopleft"><h3>Music player</h3></div>
                                         
                                         <div id="musictopright"><button id="exitmusic">[ x ]</button></div>
                                     </div>
 
                                     <div id="youtube-player">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/UNbqQBcxZyE?si=oaywTzyUAkAl_44h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/MWPYhebILb4?si=0xIi4SNagI3eTqs2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </div>
                                 </div>  
                             </div>

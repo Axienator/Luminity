@@ -39,7 +39,7 @@ export const OtherFunctions = {
         elements.colorScheme.classList.toggle('lightMode')
 
         if(elements.colorScheme.classList.contains('lightMode')) {
-            elements.colorScheme.textContent = "⏾"
+            elements.colorScheme.textContent = "☀"
             elements.StartPausetoggle.classList.toggle('lightMode')
             elements.restart.classList.toggle('lightMode')
             elements.music.classList.toggle('lightMode')
@@ -51,7 +51,7 @@ export const OtherFunctions = {
             document.querySelector('#currentMode').classList.toggle('currentlightMode')
             document.querySelector('.top-bar').classList.toggle('lightMode')
         } else {
-            elements.colorScheme.textContent = "☀"
+            elements.colorScheme.textContent = "⏾"
             elements.StartPausetoggle.classList.remove('lightMode')
             elements.restart.classList.remove('lightMode')
             elements.music.classList.remove('lightMode')
@@ -73,7 +73,6 @@ export const OtherFunctions = {
         document.querySelector('#music-container').classList.add('show')
 
         this.playClick()
-        this.musicAutoPlay()
     },
 
     musicExitdisplay () {
@@ -85,5 +84,15 @@ export const OtherFunctions = {
 
     changeBackground () {
         document.body.classList.toggle('change')
+    },
+
+    changeTimer () {
+        document.querySelector('.ceTimerlayout').classList.add('show')
+        document.querySelector('#ceTimerContainer').classList.add('show')
+    },
+
+    ceTimerExitdisplay () {
+        document.querySelector('.ceTimerlayout').classList.remove('show')
+        document.querySelector('#ceTimerContainer').classList.remove('show')
     }
 }

@@ -6,14 +6,15 @@ export const elements = {
     restart: document.querySelector('#restart'),
     music: document.querySelector('#music-icon'),
     musicExit: document.querySelector('#exitmusic'),
+    ceTimerExit: document.querySelector('#exitceTimer'),
     clickSFX: document.querySelector('#click-sfx'),
     breakSFX: document.querySelector('#break-sfx'),
     colorScheme: document.querySelector('#colorMode'),
     controlPanel: document.querySelector('.control'),
     pageLayout: document.querySelector('.page-layout'),
     currentModeDisplay: document.querySelector('#currentMode'),
-    changebg: document.querySelector('#cebackground')
-    
+    changebg: document.querySelector('#cebackground'),
+    changetimer: document.querySelector('#cetimer')
 }
 export const Duration = {
     pomodoro: 1500,

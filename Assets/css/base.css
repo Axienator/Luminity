@@ -26,9 +26,7 @@ body.change {
     min-height: 100vh;      
 }
 
-
 @media screen and (max-width: 780px) {
-
 
   .top-bar {
     display: flex;
@@ -37,8 +35,6 @@ body.change {
     font-size: 15px;
     padding-bottom: 5px;
     text-shadow: 1px 3px 4px #000000;
-
-    
   }
 
   .left-items {
@@ -52,6 +48,48 @@ body.change {
   display: flex;
   flex-direction: column;
   gap: 5px !important;
+  }
+
+  
+  .music-layout {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width: 150vw;
+    height: 100vh;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.4); /* optional dark tint */
+    display: none;
+    z-index: 30; /* on top of everything */
+  }
+
+    #music-container.show {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    max-width: 50rem;
+    width: 70%;
+    height: 30rem;
+    border-radius: 10px;
+    }
+
+  .music-contents #youtube-player {
+    position: fixed;
+    bottom: 15rem;
+    left: 3.6rem;
+    padding: 2rem;
+  }
+
+
+  #musictopright {
+    display: flex;
+    justify-content: end;
+    margin: 10px 10px 20px;
+    width: 10rem;
+  }
+  
+  iframe {
+    width: 250px;
   }
 
 }
