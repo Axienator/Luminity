@@ -14,19 +14,22 @@ export const elements = {
     pageLayout: document.querySelector('.page-layout'),
     currentModeDisplay: document.querySelector('#currentMode'),
     changebg: document.querySelector('#cebackground'),
-    changetimer: document.querySelector('#cetimer')
+    changetimer: document.querySelector('#cetimer'),
+    sfxtoggle: document.querySelector('#sfxtoggle'),
+    inputSubmit: document.querySelector('#submit'),
 }
 export const Duration = {
-    pomodoro: 1500,
+    pomodoro: 1800,
     shortbreak: 300,
-    longbreak: 600,
-    counterbeforelongbreak: 3
+    longbreak: 900,
+    counterbeforelongbreak: 3,
 }
 export const settings = {
     sidebar: document.querySelector('#sidebar-list'),
     settingoptions: document.querySelector('#settings-icon')
 }
 export const state = {
+    isMuted: false,
     isAFK: false,
     mode: 'pomodoro',
     seconds: Duration.pomodoro,
@@ -35,5 +38,11 @@ export const state = {
     cooldown: 150,
     afkTimeout: null,
     PomodoroCounter: 0,
+}
+
+export const formInput = {
+    workInput: document.querySelector('#work'),
+    shortbreakInput: document.querySelector('#sbreak'),
+    longbreakworkInput: document.querySelector('#lbreak'),
 }
 

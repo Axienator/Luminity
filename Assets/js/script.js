@@ -1,15 +1,13 @@
-// main.js
-import { elements, settings, state } from './elements.js'
-import { UtilityFunctions } from './functions.js'
+import { elements, settings, state } from './Elements.js'
+import { UtilityFunctions } from './TimerFunctions.js'
 import { OtherFunctions } from './Other.js'
+import { backgroundFunctions } from './bgFunctions.js'
 
 elements.timerDisplay.textContent = UtilityFunctions.Timeformat(state.seconds)
 
 elements.controlPanel.addEventListener('click', (x) => {
     if(x.target.id === 'startpausetoggle') UtilityFunctions.handleToggleChange()
     if(x.target.id === 'restart') UtilityFunctions.restartTimer()
-
-        
 })
 
 elements.TopbarTabs.forEach(tab => {
@@ -22,11 +20,7 @@ elements.TopbarTabs.forEach(tab => {
 })
 
 elements.colorScheme.addEventListener('click', (y) => {
-    if(y.target.id === 'colorMode') OtherFunctions.SchemeMode()
-})
-
-settings.settingoptions.addEventListener ('click', (z) => {
-    if(z.target.id === 'settings-icon') OtherFunctions.sidebarToggle()
+    if(y.target.id === 'colorMode') backgroundFunctions.SchemeMode()
 })
 
 elements.music.addEventListener ('click', () => {
@@ -46,7 +40,7 @@ document.addEventListener('mousemove', () => {
 })
 
 elements.changebg.addEventListener('click', () => {
-    OtherFunctions.changeBackground()
+    backgroundFunctions.changeBackground()
 })
 
 elements.changetimer.addEventListener('click', () => {
@@ -56,3 +50,23 @@ elements.changetimer.addEventListener('click', () => {
 elements.ceTimerExit.addEventListener('click', () => {
     OtherFunctions.ceTimerExitdisplay ()
 })
+
+elements.sfxtoggle.addEventListener('click', () => {
+    OtherFunctions.sfxToggledisplay ()
+
+    if (!state.isMuted) {
+        OtherFunctions.playClick
+    } 
+})
+
+elements.inputSubmit.addEventListener('click', () => {
+    OtherFunctions.CustomizeTimer()
+})
+
+settings.settingoptions.addEventListener ('click', (z) => {
+    if(z.target.id === 'settings-icon') OtherFunctions.sidebarToggle()
+})
+
+
+
+

@@ -1,6 +1,6 @@
 //Other.js
-import { elements, settings, state } from "./elements.js"
-
+import { elements, settings, state, formInput } from "./Elements.js"
+import { backgroundFunctions } from './bgFunctions.js'
 export const OtherFunctions = {
 
     playClick () {
@@ -32,41 +32,6 @@ export const OtherFunctions = {
         this.playClick()
     },
 
-    // declare music-container and music-contents
-    // classlist.add music-container - display:flex to appear on the screen + z-index to move it front 
-
-    SchemeMode () {
-        elements.colorScheme.classList.toggle('lightMode')
-
-        if(elements.colorScheme.classList.contains('lightMode')) {
-            elements.colorScheme.textContent = "☀"
-            elements.StartPausetoggle.classList.toggle('lightMode')
-            elements.restart.classList.toggle('lightMode')
-            elements.music.classList.toggle('lightMode')
-            document.querySelector('#pomodoro').classList.toggle('lightMode')
-            document.querySelector('#shortbreak').classList.toggle('lightMode')
-            document.querySelector('#longbreak').classList.toggle('lightMode')
-            document.querySelector('body').classList.toggle('lightMode')
-            document.querySelector('.timer-layout').classList.toggle('timerlightMode')
-            document.querySelector('#currentMode').classList.toggle('currentlightMode')
-            document.querySelector('.top-bar').classList.toggle('lightMode')
-        } else {
-            elements.colorScheme.textContent = "⏾"
-            elements.StartPausetoggle.classList.remove('lightMode')
-            elements.restart.classList.remove('lightMode')
-            elements.music.classList.remove('lightMode')
-            document.querySelector('button').classList.remove('lightMode')
-            document.querySelector('#pomodoro').classList.toggle('lightMode')
-            document.querySelector('#shortbreak').classList.toggle('lightMode')
-            document.querySelector('#longbreak').classList.toggle('lightMode')
-            document.querySelector('.center-items').classList.remove('lightMode')
-            document.querySelector('body').classList.remove('lightMode')
-            document.querySelector('.timer-layout').classList.remove('timerlightMode')
-            document.querySelector('#currentMode').classList.remove('currentlightMode')
-            document.querySelector('.top-bar').classList.remove('lightMode')
-        }
-        this.playClick()
-    },
 
     musicPlaylist () {
         document.querySelector('.music-layout').classList.add('show')
@@ -82,10 +47,6 @@ export const OtherFunctions = {
         this.playClick()
     },
 
-    changeBackground () {
-        document.body.classList.toggle('change')
-    },
-
     changeTimer () {
         document.querySelector('.ceTimerlayout').classList.add('show')
         document.querySelector('#ceTimerContainer').classList.add('show')
@@ -94,5 +55,87 @@ export const OtherFunctions = {
     ceTimerExitdisplay () {
         document.querySelector('.ceTimerlayout').classList.remove('show')
         document.querySelector('#ceTimerContainer').classList.remove('show')
+    },
+
+    CustomizeTimer () { // This will be the function that will be declared on 
+        
+        const w = formInput.workInput.value.trim()
+        const s = formInput.shortbreakInput.value.trim()
+        const l = formInput.longbreakworkInput.value.trim()
+
+        const IsValid = (value) => !isNaN(value) && value >= 1 && value <= 60
+
+        if(!IsValid(w) || !IsValid(s) || !IsValid(l)) {
+            alert("Not a Value!")
+            return
+        } 
+
+        workMin = w
+        shortbreakMin = s
+        longbreakMin = l
+
+        this.UpdatedTimeformat()
+        
+    },
+
+    UpdatedTimeformat () {
+        let minutes 
+
+        if(state.mode === 'pomodoro') {
+            minutes = workMin
+        }
+        if(state.mode === 'shortbreak') {
+            minutes = shortbreakMin
+        }
+        if(state.mode === 'longbreak') {
+            minutes = longbreakMin
+        }
+
+        const min = String(minutes).padStart(2, '0')
+
+        elements.timerDisplay.textContent = `${min}`
+    },
+
+    sfxToggledisplay () {
+        elements.sfxtoggle.classList.toggle('change')
+
+        if(elements.sfxtoggle.classList.contains('change')) {
+            elements.sfxtoggle.innerHTML = 
+            `
+            <img src="pictures/volumeoff.png" alt="Volume on icon" width="20px" height="19px">
+            `
+            this.sfxOff ()
+            console.log('Sound effects is turned off')
+        } else {
+            elements.sfxtoggle.innerHTML = 
+            `
+            <img src="pictures/volumeon.png" alt="Volume on icon" width="24px" height="24px">
+            `
+            this.sfxOn ()
+            console.log('Sound effects is turned on')
+            
+        }
+
+    }, 
+
+    sfxOff () {
+        document.querySelectorAll('audio').forEach(Audio => {
+            Audio.muted = true
+            Audio.pause()
+        })
+    },
+
+    sfxOn () {
+            document.querySelectorAll('audio').forEach(Audio => {
+            Audio.muted = false
+            elements.clickSFX.pause()
+            elements.clickSFX.currentTime = 0
+            elements.clickSFX.play()
+        })
     }
+
+    
+
+
 }
+

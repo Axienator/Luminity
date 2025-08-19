@@ -9,7 +9,7 @@
   text-shadow: 1px 3px 4px #000000;
 }
 
-#currentMode.AFK {
+.top-bar.AFK {
   opacity: 0;
 }
 
@@ -81,7 +81,7 @@
 .music-layout.show {
   display: flex;
 }
-#ceTimerContainer,
+#ceTimerContainer
 #music-container {
   background-color: rgb(43, 37, 37);
   max-width: 50rem;
@@ -89,6 +89,7 @@
   height: 30rem;
   border-radius: 10px;
 }
+
 
 #music-container.show {
   display: flex;

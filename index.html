@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- Top bar section : Night/Light mode, Pomodoro, Short/long break, Settings-->
     <div class="top-bar">
 
         <div class="left-items">
@@ -39,41 +40,48 @@
     </div>
 
 
-
+    <!-- Body section : Timer-layout, Controls, CurrentMode-->
     <div class="page-layout">
         <div class="contents">
             <div class="container">
-
-
                 <div class="ceTimerlayout">
                     <div id="ceTimerContainer">
                         <div class="ceTimerContent">
                             <div id="ceTimertopbar">
                                 <div id="ceTimertopright"> <button id="exitceTimer">[ x ]</button> </div>
                             </div>
+                            <form action="index.html">
 
-                            <form action="index.html" id="ceTimerform">
-                                <label for="work"> 
-                                    <input type="number" max="100" min="0" id="work" name="work_timer">
-                                    Work
-                                </label>
-                                <br />
-                                <label for="sbreak"> 
-                                    <input type="number" max="25" min="0" id="sbreak" name="sbreak_timer">
-                                    Short break
-                                </label>
-                                <br />
-                                <label for="lbreak"> 
-                                    <input type="number" max="50" min="0" id="sbreak" name="lbreak_timer">
-                                    Long break
-                                </label>
-                                <input type="submit" value="submit">
+                                <div class="ceTimerform">
+                                    <label for="work" id="work"> Work
+                                        <input type="number" max="100" min="0" id="work" name="work_timer"> min
+                                    </label>
+                                
+
+                                
+                                    <label for="sbreak" id="sbreak"> Short break
+                                        <input type="number" max="25" min="0" id="sbreak" name="sbreak_timer"> min
+                                    </label>
+                               
+                                
+                                
+                                    <label for="lbreak" id="lbreak"> Long break
+                                        <input type="number" max="50" min="0" id="lbreak" name="lbreak_timer"> min
+                                    </label>
+
+                                    <input type="submit" value="Confirm" id="submit">
+                                </div>
                             </form>
+
+                        
+                            <div id="sfxtoggle">
+                                <img src="pictures/volumeon.png" alt="Volume on icon" width="24px" height="24px">
+                            </div>
+                        
                         </div>
                     </div>
                 </div>
                 
-
                 <span id="currentMode">Pomodoro</span>
                 <div class="timer-layout" id="timer">00:00</div>
                 <div class="control">
@@ -92,7 +100,7 @@
                                     </div>
 
                                     <div id="youtube-player">
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/MWPYhebILb4?si=0xIi4SNagI3eTqs2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/MWPYhebILb4?si=0xIi4SNagI3eTqs2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
                                     </div>
                                 </div>  
                             </div>
@@ -106,5 +114,5 @@
 
 
 
-    <script type="module" src="Assets/js/main.js"></script>
+    <script type="module" src="Assets/js/script.js"></script>
 </body>

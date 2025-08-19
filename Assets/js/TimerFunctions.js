@@ -1,12 +1,12 @@
 // functions.js
-import { elements, Duration, state } from "./elements.js"
+import { elements, Duration, state } from "./Elements.js"
 import { OtherFunctions } from "./Other.js"
 
 export const UtilityFunctions = {
     Timeformat (seconds) {
-        const mins = String(Math.floor(seconds / 60)).padStart(2, '0')
-        const secs = String(seconds % 60).padStart(2, '0')
-        return `${mins}:${secs}`
+        const mins = String(Math.floor(seconds / 60)).padStart(2, '0') // Converts 60 seconds to 1 minute
+        const secs = String(seconds % 60).padStart(2, '0') // converts the remainder to seconds
+        return `${mins}:${secs}` // returns the value of mins and secs
     },
 
     DisplayMode () {
@@ -22,31 +22,21 @@ export const UtilityFunctions = {
     },
 
     StartTimer() {
-        if (state.timer !== null) return
-
+        if (state.timer !== null) return 
         elements.timerDisplay.textContent = this.Timeformat(state.seconds) 
-        elements.StartPausetoggle.textContent = 'Pause'
-
+        elements.StartPausetoggle.textContent = 'Pause' 
         state.timer = setInterval(() => {
-            if (state.seconds === 0) {
-                clearInterval(state.timer)
-                state.timer = null
+            if (state.seconds === 0) { 
+                this.pauseTimer()
                 OtherFunctions.playBreak()
-
-                // Switch to the next mode
                 if (state.mode === 'pomodoro') {
                     state.PomodoroCounter++
-
                     if (state.PomodoroCounter % Duration.counterbeforelongbreak === 0) {
                         UtilityFunctions.longbreakTimer()
                     } else {
                         UtilityFunctions.shortbreakTimer()
                     }
-                } else if (state.mode === 'shortbreak' || state.mode === 'longbreak') {
-                    UtilityFunctions.pomodoroTimer()
-                }
-
-                // Start the next session automatically
+                } else if (state.mode === 'shortbreak' || state.mode === 'longbreak') UtilityFunctions.pomodoroTimer()
                 UtilityFunctions.StartTimer()
             } else {
                 state.seconds--
@@ -57,15 +47,12 @@ export const UtilityFunctions = {
         OtherFunctions.playClick();
         this.AFK();
     },
-
-
     pauseTimer () {
         clearInterval(state.timer)
         state.timer = null
 
         
     },
-
     restartTimer () {
         this.pauseTimer()
         if(state.mode === 'pomodoro') state.seconds = Duration.pomodoro
@@ -82,8 +69,7 @@ export const UtilityFunctions = {
             state.isAFK = true
             elements.pageLayout.classList.add('AFK')
             elements.controlPanel.classList.add('AFK')
-            elements.currentModeDisplay.classList.add('AFK')
-            elements.TopbarTabs.classList.add('AFK')
+            document.querySelector('.top-bar').classList.add('AFK')
         }, 10000)
     },
 
@@ -92,8 +78,7 @@ export const UtilityFunctions = {
         state.isAFK = false
         elements.pageLayout.classList.remove('AFK')
         elements.controlPanel.classList.remove('AFK')
-        elements.currentModeDisplay.classList.remove('AFK')
-        elements.TopbarTabs.classList.remove('AFK')
+        document.querySelector('.top-bar').classList.remove('AFK')
         
     },
 
@@ -150,6 +135,8 @@ export const UtilityFunctions = {
         OtherFunctions.playClick()
         this.DisplayMode()
     }
+
+    
 
 }
 
