@@ -1,6 +1,6 @@
 import { elements } from "./Elements.js"
+import { OtherFunctions } from "./Other.js"
 
-import (elements)
 export const backgroundFunctions = { 
 
 SchemeMode () {
@@ -33,10 +33,8 @@ SchemeMode () {
             document.querySelector('#currentMode').classList.remove('currentlightMode')
             document.querySelector('.top-bar').classList.remove('lightMode')
         }
-        this.playClick()
+        OtherFunctions.playClick()
     },
-    
-    changeBackground () {
-        document.body.classList.toggle('change')
-    },
+    // WIP
+   
 }

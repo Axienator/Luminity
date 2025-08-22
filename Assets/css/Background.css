@@ -1,0 +1,41 @@
+
+body.bg1 { 
+    background-image: url(/pictures/darkbg2.jpg);
+    background-size: cover;         
+    background-position: center;     
+    background-repeat: no-repeat;    
+    background-attachment: fixed;    
+    overflow: hidden;
+    min-height: 100vh;      
+}
+
+
+body.bg2 { 
+    background-image: url(/pictures/LightBG1.jpg);
+    background-size: cover;         
+    background-position: center;     
+    background-repeat: no-repeat;    
+    background-attachment: fixed;    
+    overflow: hidden;
+    min-height: 100vh;      
+}
+
+body.bg3 { 
+    background-image: url(/pictures/lightbg.png);
+    background-size: cover;         
+    background-position: center;     
+    background-repeat: no-repeat;    
+    background-attachment: fixed;    
+    overflow: hidden;
+    min-height: 100vh;      
+}
+
+body.bg4 { 
+    background-image: url(/pictures/lightmodebg2.jpg);
+    background-size: cover;         
+    background-position: center;     
+    background-repeat: no-repeat;    
+    background-attachment: fixed;    
+    overflow: hidden;
+    min-height: 100vh;      
+}

@@ -1,4 +1,4 @@
-import { elements, settings, state } from './Elements.js'
+import { elements, formInput, settings, state, } from './Elements.js'
 import { UtilityFunctions } from './TimerFunctions.js'
 import { OtherFunctions } from './Other.js'
 import { backgroundFunctions } from './bgFunctions.js'
@@ -38,9 +38,18 @@ document.addEventListener('mousemove', () => {
     } 
     UtilityFunctions.resetAFKTimer()
 })
-
+    let count = 0
 elements.changebg.addEventListener('click', () => {
-    backgroundFunctions.changeBackground()
+    count++
+    if(count == 1) document.body.classList.add('bg1')
+    if(count == 2) document.body.classList.add('bg2')
+    if(count == 3) document.body.classList.add('bg3')
+    if(count % 4 == 0) {
+        count = 0
+        document.body.classList.remove('bg1')
+        document.body.classList.remove('bg2')
+        document.body.classList.remove('bg3')
+    } 
 })
 
 elements.changetimer.addEventListener('click', () => {
@@ -59,7 +68,8 @@ elements.sfxtoggle.addEventListener('click', () => {
     } 
 })
 
-elements.inputSubmit.addEventListener('click', () => {
+formInput.inputSubmit.addEventListener('click', (a) => {
+    a.preventDefault()
     OtherFunctions.CustomizeTimer()
 })
 

@@ -1,6 +1,8 @@
 //Other.js
-import { elements, settings, state, formInput } from "./Elements.js"
-import { backgroundFunctions } from './bgFunctions.js'
+import { elements, settings, state, formInput, Duration, } from "./Elements.js"
+import { UtilityFunctions } from "./TimerFunctions.js"
+
+
 export const OtherFunctions = {
 
     playClick () {
@@ -47,53 +49,14 @@ export const OtherFunctions = {
         this.playClick()
     },
 
-    changeTimer () {
-        document.querySelector('.ceTimerlayout').classList.add('show')
-        document.querySelector('#ceTimerContainer').classList.add('show')
-    },
-
     ceTimerExitdisplay () {
         document.querySelector('.ceTimerlayout').classList.remove('show')
         document.querySelector('#ceTimerContainer').classList.remove('show')
     },
 
-    CustomizeTimer () { // This will be the function that will be declared on 
-        
-        const w = formInput.workInput.value.trim()
-        const s = formInput.shortbreakInput.value.trim()
-        const l = formInput.longbreakworkInput.value.trim()
-
-        const IsValid = (value) => !isNaN(value) && value >= 1 && value <= 60
-
-        if(!IsValid(w) || !IsValid(s) || !IsValid(l)) {
-            alert("Not a Value!")
-            return
-        } 
-
-        workMin = w
-        shortbreakMin = s
-        longbreakMin = l
-
-        this.UpdatedTimeformat()
-        
-    },
-
-    UpdatedTimeformat () {
-        let minutes 
-
-        if(state.mode === 'pomodoro') {
-            minutes = workMin
-        }
-        if(state.mode === 'shortbreak') {
-            minutes = shortbreakMin
-        }
-        if(state.mode === 'longbreak') {
-            minutes = longbreakMin
-        }
-
-        const min = String(minutes).padStart(2, '0')
-
-        elements.timerDisplay.textContent = `${min}`
+    changeTimer () {
+        document.querySelector('.ceTimerlayout').classList.add('show')
+        document.querySelector('#ceTimerContainer').classList.add('show')
     },
 
     sfxToggledisplay () {
@@ -132,10 +95,36 @@ export const OtherFunctions = {
             elements.clickSFX.currentTime = 0
             elements.clickSFX.play()
         })
-    }
+    },
+
 
     
 
+    CustomizeTimer () { 
+        let updatedWork = formInput.workInput.value * 60
+        let updatedSbreak = formInput.shortbreakInput.value * 60
+        let updatedLbreak = formInput.longbreakworkInput.value * 60
+        Duration.pomodoro = updatedWork
+        Duration.shortbreak = updatedSbreak
+        Duration.longbreak = updatedLbreak
+        if(state.mode === 'pomodoro') state.seconds = Duration.pomodoro
+        if(state.mode === 'shortbreak') state.seconds = Duration.shortbreak
+        if(state.mode === 'longbreak') state.seconds = Duration.longbreak
+        elements.timerDisplay.textContent = UtilityFunctions.Timeformat(state.seconds)
+        console.log("Work:", Duration.pomodoro);
+        console.log("Short break:", Duration.shortbreak);
+        console.log("Long break:", Duration.longbreak);
+        UtilityFunctions.pauseTimer()
+    },
+
+
+
+
+    // User puts Input in w/s/l Timer 
+    // If the Input is Absolute number => proceed on converting the minutes to seconds
+    // Once converted, send the information to the duration Ex.
+    // Duration.pomodoro = updatedWorkTimer(The converted seconds)
+    // 
 
 }
 

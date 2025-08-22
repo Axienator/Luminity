@@ -16,9 +16,8 @@ export const elements = {
     changebg: document.querySelector('#cebackground'),
     changetimer: document.querySelector('#cetimer'),
     sfxtoggle: document.querySelector('#sfxtoggle'),
-    inputSubmit: document.querySelector('#submit'),
 }
-export const Duration = {
+export let Duration = {
     pomodoro: 1800,
     shortbreak: 300,
     longbreak: 900,
@@ -44,5 +43,7 @@ export const formInput = {
     workInput: document.querySelector('#work'),
     shortbreakInput: document.querySelector('#sbreak'),
     longbreakworkInput: document.querySelector('#lbreak'),
+    inputSubmit: document.querySelector('#submit'),
 }
+
 

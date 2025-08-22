@@ -17,12 +17,3 @@ body {
     min-height: 100vh;               
 }
 
-body.change {
-    background-image: url(/pictures/darkbg2.jpg);
-    background-size: cover;         
-    background-position: center;     
-    background-repeat: no-repeat;    
-    background-attachment: fixed;    
-    overflow: hidden;
-    min-height: 100vh;      
-}

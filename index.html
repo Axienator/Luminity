@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Assets/css/main.css">
     <link rel="shortcut icon" href="pictures/Clarity.png" type="image/x-icon">
-    <audio id="click-sfx" src="sounds/click.mp3" preload="auto"> </audio>
-    <audio id="break-sfx" src="sounds/shortbreaknotif.mp3" preload="auto"> </audio>
 </head>
 
 <body>
@@ -53,20 +51,20 @@
                             <form action="index.html">
 
                                 <div class="ceTimerform">
-                                    <label for="work" id="work"> Work
-                                        <input type="number" max="100" min="0" id="work" name="work_timer"> min
+                                    <label for="work" > Work
+                                        <input type="number" max="100" min="0" id="work" value="" name="work_timer"> min
                                     </label>
                                 
 
                                 
-                                    <label for="sbreak" id="sbreak"> Short break
-                                        <input type="number" max="25" min="0" id="sbreak" name="sbreak_timer"> min
+                                    <label for="sbreak" > Short break
+                                        <input type="number" max="25" min="0" id="sbreak" value="" name="sbreak_timer"> min
                                     </label>
                                
                                 
                                 
-                                    <label for="lbreak" id="lbreak"> Long break
-                                        <input type="number" max="50" min="0" id="lbreak" name="lbreak_timer"> min
+                                    <label for="lbreak" > Long break
+                                        <input type="number" max="50" min="0" id="lbreak" value="" name="lbreak_timer"> min
                                     </label>
 
                                     <input type="submit" value="Confirm" id="submit">
@@ -100,7 +98,7 @@
                                     </div>
 
                                     <div id="youtube-player">
-                                         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/MWPYhebILb4?si=0xIi4SNagI3eTqs2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+                                          <iframe width="560" height="315" src="https://www.youtube.com/embed/MWPYhebILb4?si=0xIi4SNagI3eTqs2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
                                     </div>
                                 </div>  
                             </div>
@@ -113,6 +111,8 @@
 
 
 
-
+    <audio id="click-sfx" src="sounds/click.mp3" preload="auto"> </audio>
+    <audio id="break-sfx" src="sounds/shortbreaknotif.mp3" preload="auto"> </audio>
     <script type="module" src="Assets/js/script.js"></script>
+    
 </body>

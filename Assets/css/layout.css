@@ -56,13 +56,7 @@
   border-radius: 10px;
 }
 
-.timer-layout {
-  font-variant-numeric: tabular-nums;
-  font-size: 10em;
-  font-weight: bold;
-  color: #fde5e5;
-  text-align: center;
-} 
+
 .ceTimerlayout,
 .music-layout {
   position: fixed;
@@ -71,6 +65,7 @@
   width: 100vw;
   height: 100vh;
   backdrop-filter: blur(8px);
+
   background-color: rgba(0, 0, 0, 0.4); /* optional dark tint */
   display: none;
   align-items: center;
@@ -123,6 +118,8 @@
   flex-direction: column;
   align-items: center; 
   gap: 1rem; 
+  background-color: #363636;
+  height: 30rem;
 }
 
 .ceTimerlayout.show{

@@ -1,6 +1,8 @@
 @import url('./base.css');
 @import url('./layout.css');
 @import url('./components.css');
-@import url('./themes.css');
+@import url('./UIChanges.css');
 @import url('./responsive.css');
+@import url('./Settings.css');
+@import url('./Background.css');
 

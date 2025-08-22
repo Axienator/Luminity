@@ -10,20 +10,13 @@ export const UtilityFunctions = {
     },
 
     DisplayMode () {
-        if(state.mode === 'pomodoro') {
-            elements.currentModeDisplay.textContent='Pomodoro'
-        }
-        if(state.mode === 'shortbreak') {
-            elements.currentModeDisplay.textContent='Short break'
-        }
-        if(state.mode === 'longbreak') {
-            elements.currentModeDisplay.textContent='Long break'
-        }
+        if(state.mode === 'pomodoro') elements.currentModeDisplay.textContent='Pomodoro'
+        if(state.mode === 'shortbreak') elements.currentModeDisplay.textContent='Short break'
+        if(state.mode === 'longbreak') elements.currentModeDisplay.textContent='Long break'
     },
 
     StartTimer() {
         if (state.timer !== null) return 
-        elements.timerDisplay.textContent = this.Timeformat(state.seconds) 
         elements.StartPausetoggle.textContent = 'Pause' 
         state.timer = setInterval(() => {
             if (state.seconds === 0) { 
@@ -50,9 +43,8 @@ export const UtilityFunctions = {
     pauseTimer () {
         clearInterval(state.timer)
         state.timer = null
-
-        
     },
+    
     restartTimer () {
         this.pauseTimer()
         if(state.mode === 'pomodoro') state.seconds = Duration.pomodoro
