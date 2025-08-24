@@ -22,7 +22,24 @@
   gap: 5px !important;
   }
 
-  
+  .timer-layout {
+    font-variant-numeric: tabular-nums;
+    font-size: 6em;
+    font-weight: bold;
+    color: #fde5e5;
+    text-align: center;
+  } 
+
+  .button {
+  background-color: rgb(253, 229, 229);
+  font-size: 15px;
+  text-align: center;
+  padding: 0.5rem 1.5rem ;
+  border-radius: 15px;
+  border: 2px solid ;
+  cursor: pointer;
+}
+
   .music-layout {
     display: flex;
     align-items: start;

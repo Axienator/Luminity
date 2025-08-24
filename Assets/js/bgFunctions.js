@@ -1,5 +1,7 @@
 import { elements } from "./Elements.js"
 import { OtherFunctions } from "./Other.js"
+ let countDark = 0
+ let countLight = 0
 
 export const backgroundFunctions = { 
 
@@ -18,6 +20,9 @@ SchemeMode () {
             document.querySelector('.timer-layout').classList.toggle('timerlightMode')
             document.querySelector('#currentMode').classList.toggle('currentlightMode')
             document.querySelector('.top-bar').classList.toggle('lightMode')
+            this.Removebg()
+            countLight = 0
+            countDark = 0
         } else {
             elements.colorScheme.textContent = "⏾"
             elements.StartPausetoggle.classList.remove('lightMode')
@@ -32,9 +37,51 @@ SchemeMode () {
             document.querySelector('.timer-layout').classList.remove('timerlightMode')
             document.querySelector('#currentMode').classList.remove('currentlightMode')
             document.querySelector('.top-bar').classList.remove('lightMode')
+            this.Removebg()
+            countLight = 0
+            countDark = 0
         }
         OtherFunctions.playClick()
     },
-    // WIP
+
+    ChangeBackground () {
+        countDark++
+        if(countDark == 1) document.body.classList.add('bg1')
+        if(countDark == 2) {
+             document.body.classList.add('bg2') 
+             document.body.classList.remove('bg1')
+        }
+        if(countDark == 3) { 
+            document.body.classList.add('bg3')
+            document.body.classList.remove('bg2')
+        }
+        if(countDark % 4 == 0) {
+            countDark = 0
+            document.body.classList.remove('bg3')
+        }
+    },
+    
+    ChangeBackgroundLightMode () {
+        countLight++
+        if(countLight === 1) document.body.classList.add('bg4')
+        if(countLight === 2) {
+            document.body.classList.add('bg5')
+            document.body.classList.remove('bg4')
+        }
+        if(countLight === 3) {
+            document.body.classList.add('bg6')
+            document.body.classList.remove('bg5')
+        }
+        if(countLight % 3 === 0) {
+            countLight = 0
+            document.body.classList.remove('bg6')
+        }
+    
+    },
+    Removebg () {
+        countDark = 0
+        countLight = 0
+        document.body.classList.remove('bg1', 'bg2', 'bg3', 'bg4', 'bg5', 'bg6')
+    }
    
 }

@@ -11,7 +11,7 @@ body.bg1 {
 
 
 body.bg2 { 
-    background-image: url(/pictures/LightBG1.jpg);
+    background-image: url(/pictures/darkbg3.jpg);
     background-size: cover;         
     background-position: center;     
     background-repeat: no-repeat;    
@@ -21,7 +21,7 @@ body.bg2 {
 }
 
 body.bg3 { 
-    background-image: url(/pictures/lightbg.png);
+    background-image: url(/pictures/darkbg4.jpg);
     background-size: cover;         
     background-position: center;     
     background-repeat: no-repeat;    
@@ -31,7 +31,27 @@ body.bg3 {
 }
 
 body.bg4 { 
-    background-image: url(/pictures/lightmodebg2.jpg);
+    background-image: url(/pictures/LightBG1.jpg);
+    background-size: cover;         
+    background-position: center;     
+    background-repeat: no-repeat;    
+    background-attachment: fixed;    
+    overflow: hidden;
+    min-height: 100vh;      
+}
+
+body.bg5 { 
+    background-image: url(/pictures/lightbg.png);
+    background-size: cover;         
+    background-position: center;     
+    background-repeat: no-repeat;    
+    background-attachment: fixed;    
+    overflow: hidden;
+    min-height: 100vh;      
+}
+
+body.bg5 { 
+    background-image: url(/pictures/lightbg3.jpg);
     background-size: cover;         
     background-position: center;     
     background-repeat: no-repeat;    

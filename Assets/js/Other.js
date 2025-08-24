@@ -8,7 +8,7 @@ export const OtherFunctions = {
     playClick () {
         const now = Date.now()
         if(now - state.lastClickTime > state.cooldown) {
-            elements.clickSFX.volume = 0.3
+            elements.clickSFX.volume = 0.2
             elements.clickSFX.currentTime = 0
             elements.clickSFX.play()
             state.lastClickTime = now
@@ -18,7 +18,7 @@ export const OtherFunctions = {
     playBreak () {
         const now = Date.now()
         if(now - state.lastClickTime > state.cooldown) {
-            elements.breakSFX.volume = 0.3
+            elements.breakSFX.volume = 0.2
             elements.breakSFX.currentTime = 0
             elements.breakSFX.play()
         }
@@ -97,13 +97,15 @@ export const OtherFunctions = {
         })
     },
 
-
-    
-
     CustomizeTimer () { 
+        if(formInput.workInput.value > 60 || formInput.shortbreakInput.value > 60 || formInput.longbreakInput.value > 60 || formInput.workInput.value < 1 || formInput.shortbreakInput.value < 1 || formInput.longbreakInput.value < 1){ 
+            alert("Please enter a value from 1 - 60") 
+            return 
+        } else {
         let updatedWork = formInput.workInput.value * 60
         let updatedSbreak = formInput.shortbreakInput.value * 60
-        let updatedLbreak = formInput.longbreakworkInput.value * 60
+        let updatedLbreak = formInput.longbreakInput.value * 60
+
         Duration.pomodoro = updatedWork
         Duration.shortbreak = updatedSbreak
         Duration.longbreak = updatedLbreak
@@ -115,16 +117,8 @@ export const OtherFunctions = {
         console.log("Short break:", Duration.shortbreak);
         console.log("Long break:", Duration.longbreak);
         UtilityFunctions.pauseTimer()
+
+        }
     },
-
-
-
-
-    // User puts Input in w/s/l Timer 
-    // If the Input is Absolute number => proceed on converting the minutes to seconds
-    // Once converted, send the information to the duration Ex.
-    // Duration.pomodoro = updatedWorkTimer(The converted seconds)
-    // 
-
 }
 

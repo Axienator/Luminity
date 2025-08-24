@@ -42,7 +42,7 @@ export const state = {
 export const formInput = {
     workInput: document.querySelector('#work'),
     shortbreakInput: document.querySelector('#sbreak'),
-    longbreakworkInput: document.querySelector('#lbreak'),
+    longbreakInput: document.querySelector('#lbreak'),
     inputSubmit: document.querySelector('#submit'),
 }
 
